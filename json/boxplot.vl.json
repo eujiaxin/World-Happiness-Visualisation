@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A horizontal box plot showing median, min, and max body mass of penguins.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
+  },
+  "mark": {"type": "boxplot", "extent": "min-max"},
+  "encoding": {
+    "y": {"field": "Regional indicator", "type": "nominal"},
+    "x": {
+      "field": "Ladder score",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "Regional happiness level",
+      "type": "nominal",
+      "scheme": ["green"]
+    }
+  },
+  "config": {}
+}
