@@ -1,0 +1,46 @@
+{
+  "title": "Happiness Score vs Life Expectancy",
+  "width": 800,
+  "height": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
+  },
+  "layer": [
+    {
+      "transform": [{"filter": "datum['Healthy life expectancy'] > 0"}],
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "Healthy life expectancy",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "title": "Life expectancy (Age)"
+        },
+        "y": {
+          "field": "Ladder score",
+          "type": "quantitative",
+          "scale": {"zero": false},
+          "title": "Happiness score"
+        },
+        "color": {
+          "field": "Regional happiness level",
+          "type": "nominal",
+          "scale": {"range": ["green", "orange", "red"]}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "lightgray"},
+      "transform": [
+        {"regression": "Healthy life expectancy", "on": "Ladder score"}
+      ],
+      "encoding": {
+        "x": {"field": "Healthy life expectancy", "type": "quantitative"},
+        "y": {"field": "Ladder score", "type": "quantitative"}
+      }
+    }
+  ],
+  "config": {}
+}
