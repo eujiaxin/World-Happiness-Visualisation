@@ -1,21 +1,21 @@
 ﻿Country,Regional indicator,Happiness level,Regional happiness level,Color,Ladder score,Difference from Average,Standard error of ladder score,upperwhisker,lowerwhisker,Logged GDP per capita,Social support,Healthy life expectancy,Freedom to make life choices,Generosity,Perceptions of corruption,Ladder score in Dystopia,Explained by: Log GDP per capita,Explained by: Social support,Explained by: Healthy life expectancy,Explained by: Freedom to make life choices,Explained by: Generosity,Explained by: Perceptions of corruption,Dystopia + residual
-Afghanistan,South Asia,Least Happy,Below Average,Saddest,2.523,2.96,0.038,2.596,2.449,7.695,0.463,52.493,0.382,-0.102,0.924,2.43,0.37,0,0.126,0,0.122,0.01,1.895
-S. Sudan,Middle East and North Africa,,Average,Other,2.82,2.66,,,,,,,,,,,,,,,,,
-Zimbabwe,Sub-Saharan Africa,Least Happy,Below Average,Other,3.145,2.34,0.058,3.259,3.03,7.943,0.75,56.201,0.677,-0.047,0.821,2.43,0.457,0.649,0.243,0.359,0.157,0.075,1.205
-Rwanda,Sub-Saharan Africa,Least Happy,Below Average,Other,3.415,2.07,0.068,3.548,3.282,7.676,0.552,61.4,0.897,0.061,0.167,2.43,0.364,0.202,0.407,0.627,0.227,0.493,1.095
-Botswana,Sub-Saharan Africa,Least Happy,Below Average,Other,3.467,2.01,0.074,3.611,3.322,9.782,0.784,59.269,0.824,-0.246,0.801,2.43,1.099,0.724,0.34,0.539,0.027,0.088,0.648
-Lesotho,Sub-Saharan Africa,Least Happy,Below Average,Other,3.512,1.97,0.12,3.748,3.276,7.926,0.787,48.7,0.715,-0.131,0.915,2.43,0.451,0.731,0.007,0.405,0.103,0.015,1.8
-Malawi,Sub-Saharan Africa,Least Happy,Below Average,Other,3.6,1.88,0.092,3.781,3.419,6.958,0.537,57.948,0.78,0.038,0.729,2.43,0.113,0.168,0.298,0.484,0.213,0.134,2.19
-Haiti,Latin America and Caribbean,,Average,Other,3.615,1.87,0.173,3.953,3.276,7.477,0.54,55.7,0.593,0.422,0.721,2.43,0.294,0.173,0.227,0.257,0.463,0.139,2.06
-Tanzania,Sub-Saharan Africa,Least Happy,Below Average,Other,3.623,1.86,0.071,3.762,3.485,7.876,0.702,57.999,0.833,0.183,0.577,2.43,0.433,0.54,0.3,0.549,0.307,0.231,1.263
-Yemen,Middle East and North Africa,,Average,Other,3.658,1.82,0.07,3.794,3.521,7.578,0.832,57.122,0.602,-0.147,0.8,2.43,0.329,0.831,0.272,0.268,0.092,0.089,1.776
-Austria,Western Europe,Most happy,Above Average,Other,7.268,-1.79,0.036,7.337,7.198,10.906,0.934,73.3,0.908,0.042,0.481,2.43,1.492,1.062,0.782,0.64,0.215,0.292,2.784
-New Zealand,North America and ANZ,Most happy,Above Average,Other,7.277,-1.80,0.04,7.355,7.198,10.643,0.948,73.4,0.929,0.134,0.242,2.43,1.4,1.094,0.785,0.665,0.276,0.445,2.612
-Luxembourg,Western Europe,Most happy,Above Average,Other,7.324,-1.84,0.037,7.396,7.252,11.647,0.908,72.6,0.907,-0.034,0.386,2.43,1.751,1.003,0.76,0.639,0.166,0.353,2.653
-Sweden,Western Europe,Most happy,Above Average,Other,7.363,-1.88,0.036,7.433,7.293,10.867,0.934,72.7,0.945,0.086,0.237,2.43,1.478,1.062,0.763,0.685,0.244,0.448,2.683
-Norway,Western Europe,Most happy,Above Average,Other,7.392,-1.91,0.035,7.462,7.323,11.053,0.954,73.3,0.96,0.093,0.27,2.43,1.543,1.108,0.782,0.703,0.249,0.427,2.58
-Netherlands,Western Europe,Most happy,Above Average,Other,7.464,-1.98,0.027,7.518,7.41,10.932,0.942,72.4,0.913,0.175,0.338,2.43,1.501,1.079,0.753,0.647,0.302,0.384,2.798
-Iceland,Western Europe,Most happy,Above Average,Other,7.554,-2.07,0.059,7.67,7.438,10.878,0.983,73,0.955,0.16,0.673,2.43,1.482,1.172,0.772,0.698,0.293,0.17,2.967
-Switzerland,Western Europe,Most happy,Above Average,Other,7.571,-2.09,0.036,7.643,7.5,11.117,0.942,74.4,0.919,0.025,0.292,2.43,1.566,1.079,0.816,0.653,0.204,0.413,2.839
-Denmark,Western Europe,Most happy,Above Average,Other,7.62,-2.14,0.035,7.687,7.552,10.933,0.954,72.7,0.946,0.03,0.179,2.43,1.502,1.108,0.763,0.686,0.208,0.485,2.868
-Finland,Western Europe,Most happy,Above Average,Happiest,7.842,-2.36,0.032,7.904,7.78,10.775,0.954,72,0.949,-0.098,0.186,2.43,1.446,1.106,0.741,0.691,0.124,0.481,3.253
+Afghanistan,South Asia,Least Happy,Below Average,Saddest,2.523,-2.96,0.038,2.596,2.449,7.695,0.463,52.493,0.382,-0.102,0.924,2.43,0.37,0,0.126,0,0.122,0.01,1.895
+S. Sudan,Middle East and North Africa,,Average,Other,2.82,-2.66,,,,,,,,,,,,,,,,,
+Zimbabwe,Sub-Saharan Africa,Least Happy,Below Average,Other,3.145,-2.34,0.058,3.259,3.03,7.943,0.75,56.201,0.677,-0.047,0.821,2.43,0.457,0.649,0.243,0.359,0.157,0.075,1.205
+Rwanda,Sub-Saharan Africa,Least Happy,Below Average,Other,3.415,-2.07,0.068,3.548,3.282,7.676,0.552,61.4,0.897,0.061,0.167,2.43,0.364,0.202,0.407,0.627,0.227,0.493,1.095
+Botswana,Sub-Saharan Africa,Least Happy,Below Average,Other,3.467,-2.01,0.074,3.611,3.322,9.782,0.784,59.269,0.824,-0.246,0.801,2.43,1.099,0.724,0.34,0.539,0.027,0.088,0.648
+Lesotho,Sub-Saharan Africa,Least Happy,Below Average,Other,3.512,-1.97,0.12,3.748,3.276,7.926,0.787,48.7,0.715,-0.131,0.915,2.43,0.451,0.731,0.007,0.405,0.103,0.015,1.8
+Malawi,Sub-Saharan Africa,Least Happy,Below Average,Other,3.6,-1.88,0.092,3.781,3.419,6.958,0.537,57.948,0.78,0.038,0.729,2.43,0.113,0.168,0.298,0.484,0.213,0.134,2.19
+Haiti,Latin America and Caribbean,,Average,Other,3.615,-1.87,0.173,3.953,3.276,7.477,0.54,55.7,0.593,0.422,0.721,2.43,0.294,0.173,0.227,0.257,0.463,0.139,2.06
+Tanzania,Sub-Saharan Africa,Least Happy,Below Average,Other,3.623,-1.86,0.071,3.762,3.485,7.876,0.702,57.999,0.833,0.183,0.577,2.43,0.433,0.54,0.3,0.549,0.307,0.231,1.263
+Yemen,Middle East and North Africa,,Average,Other,3.658,-1.82,0.07,3.794,3.521,7.578,0.832,57.122,0.602,-0.147,0.8,2.43,0.329,0.831,0.272,0.268,0.092,0.089,1.776
+Austria,Western Europe,Most happy,Above Average,Other,7.268,1.79,0.036,7.337,7.198,10.906,0.934,73.3,0.908,0.042,0.481,2.43,1.492,1.062,0.782,0.64,0.215,0.292,2.784
+New Zealand,North America and ANZ,Most happy,Above Average,Other,7.277,1.80,0.04,7.355,7.198,10.643,0.948,73.4,0.929,0.134,0.242,2.43,1.4,1.094,0.785,0.665,0.276,0.445,2.612
+Luxembourg,Western Europe,Most happy,Above Average,Other,7.324,1.84,0.037,7.396,7.252,11.647,0.908,72.6,0.907,-0.034,0.386,2.43,1.751,1.003,0.76,0.639,0.166,0.353,2.653
+Sweden,Western Europe,Most happy,Above Average,Other,7.363,1.88,0.036,7.433,7.293,10.867,0.934,72.7,0.945,0.086,0.237,2.43,1.478,1.062,0.763,0.685,0.244,0.448,2.683
+Norway,Western Europe,Most happy,Above Average,Other,7.392,1.91,0.035,7.462,7.323,11.053,0.954,73.3,0.96,0.093,0.27,2.43,1.543,1.108,0.782,0.703,0.249,0.427,2.58
+Netherlands,Western Europe,Most happy,Above Average,Other,7.464,1.98,0.027,7.518,7.41,10.932,0.942,72.4,0.913,0.175,0.338,2.43,1.501,1.079,0.753,0.647,0.302,0.384,2.798
+Iceland,Western Europe,Most happy,Above Average,Other,7.554,2.07,0.059,7.67,7.438,10.878,0.983,73,0.955,0.16,0.673,2.43,1.482,1.172,0.772,0.698,0.293,0.17,2.967
+Switzerland,Western Europe,Most happy,Above Average,Other,7.571,2.09,0.036,7.643,7.5,11.117,0.942,74.4,0.919,0.025,0.292,2.43,1.566,1.079,0.816,0.653,0.204,0.413,2.839
+Denmark,Western Europe,Most happy,Above Average,Other,7.62,2.14,0.035,7.687,7.552,10.933,0.954,72.7,0.946,0.03,0.179,2.43,1.502,1.108,0.763,0.686,0.208,0.485,2.868
+Finland,Western Europe,Most happy,Above Average,Happiest,7.842,2.36,0.032,7.904,7.78,10.775,0.954,72,0.949,-0.098,0.186,2.43,1.446,1.106,0.741,0.691,0.124,0.481,3.253
