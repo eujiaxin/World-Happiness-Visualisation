@@ -32,10 +32,13 @@
     },
     "tooltip": [
       {"field": "Country", "type": "nominal"},
-      {"field": "Ladder score", "type": "quantitative"},
-      {"field": "Difference from Average", "type": "quantitative"}
+      {"field":"Regional indicator","type":"nominal","title":"Region"},
+      {"field": "Ladder score", "type": "quantitative","title":"Happiness score"},
+      {"field": "Difference from Average", "type": "quantitative","title":"Average"}
     ],
-    "color": {"field": "Regional indicator"}
+    "color": {"field": "Regional indicator",
+      "scale": {"range": ["teal","yellow","blue","red","orange","green"]}
+    }
   },
   "config": {}
 }
