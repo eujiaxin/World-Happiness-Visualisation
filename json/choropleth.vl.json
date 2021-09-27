@@ -10,6 +10,32 @@
       "feature": "countries"
     }
   },
+  "params": [
+    {
+      "name":"Region_selection",
+      "bind": {
+        "input":"select",
+        "options": [
+          null,
+          "Western Europe",
+          "Central and Eastern Europe",
+          "East Asia",
+          "South Asia",
+          "Southeast Asia",
+          "Latin America and Caribbean",
+          "North America and ANZ",
+          "Commonwealth of Independent States",
+          "Middle East and North Africa",
+          "Sub-Saharan Africa"
+        ],
+    "labels":[
+      "Show All",
+      "Western Europe"
+    ],
+  "name": "Region Selection:"
+      }
+    }
+  ],
   "projection": {
     "type": "equirectangular"
   },
@@ -44,9 +70,13 @@
             },
             "key": "Country",
             "fields": [
-              "Ladder score"
+              "Ladder score",
+              "Regional indicator"
             ]
           }
+        },
+        {
+          "filter":  "Region_selection == null || datum['Regional indicator'] == Region_selection"
         }
       ],
       "mark": {
@@ -58,6 +88,7 @@
           "field": "Ladder score",
           "type": "quantitative",
           "scale": {
+            "domain":[2,8],
             "scheme": "redyellowgreen"
           }
         },
