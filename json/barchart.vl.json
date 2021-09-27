@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
+  "width": 1200,
+  "height": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/happiest-to-saddest-countries-top-20.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelAngle": 0,
+        "labelPadding": 4
+      },
+      "sort": "y"
+    },
+    "y": {
+      "field": "Difference from Average",
+      "type": "quantitative",
+      "axis": {
+        "gridColor": {
+          "condition": {"test": "datum.value === 0", "value": "black"},
+          "value": "#e4e4e4"
+        }
+      },
+      "scale": {"domainMin": -3, "domainMax": 3}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Ladder score", "type": "quantitative"},
+      {"field": "Difference from Average", "type": "quantitative"}
+    ],
+    "color": {"field": "Regional indicator"}
+  },
+  "config": {}
+}
