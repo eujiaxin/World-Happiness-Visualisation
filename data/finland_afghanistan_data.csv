@@ -1,13 +1,13 @@
 ﻿category,key,value,normalised value?
-Finland,Economic Production,10.775,
-Finland,Social Support,0.954,
-Finland,Life Expectancy,72,
-Finland,Freedom,0.949,
-Finland,Generosity,-0.098,
-Finland,Corruption,0.186,
-Afghanistan,Economic Production,7.695,
-Afghanistan,Social Support,0.463,
-Afghanistan,Life Expectancy,52.493,
-Afghanistan,Freedom,0.382,
-Afghanistan,Generosity,-0.102,
-Afghanistan,Corruption,0.924,
+Finland,Economic Production,100.0,10.775
+Finland,Social Support,95.4,0.954
+Finland,Life Expectancy,72.0,72
+Finland,Freedom,94.9,0.949
+Finland,Generosity,10.2,-0.098
+Finland,Corruption,18.6,0.186
+Afghanistan,Economic Production,77.0,7.695
+Afghanistan,Social Support,46.3,0.463
+Afghanistan,Life Expectancy,52.5,52.493
+Afghanistan,Freedom,38.2,0.382
+Afghanistan,Generosity,9.8,-0.102
+Afghanistan,Corruption,92.4,0.924
