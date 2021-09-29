@@ -1,13 +1,13 @@
-﻿category,key,value
-0,Logged GDP per capita,10.775
-0,Social support,0.954
-0,Healthy life expectancy,72
-0,Freedom to make life choices,0.949
-0,Generosity,-0.098
-0,Perceptions of corruption,0.186
-1,Logged GDP per capita,7.695
-1,Social support,0.463
-1,Healthy life expectancy,52.493
-1,Freedom to make life choices,0.382
-1,Generosity,-0.102
-1,Perceptions of corruption,0.924
+﻿category,key,value,normalised value?
+Finland,Economic Production,10.775,
+Finland,Social Support,0.954,
+Finland,Life Expectancy,72,
+Finland,Freedom,0.949,
+Finland,Generosity,-0.098,
+Finland,Corruption,0.186,
+Afghanistan,Economic Production,7.695,
+Afghanistan,Social Support,0.463,
+Afghanistan,Life Expectancy,52.493,
+Afghanistan,Freedom,0.382,
+Afghanistan,Generosity,-0.102,
+Afghanistan,Corruption,0.924,
