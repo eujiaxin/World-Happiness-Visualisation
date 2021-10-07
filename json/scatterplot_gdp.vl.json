@@ -1,9 +1,9 @@
 {
   "title": "Happiness Score vs Logged GDP per capita",
-  "width": 800,
-  "height": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "width":700,
+  "height":500,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },

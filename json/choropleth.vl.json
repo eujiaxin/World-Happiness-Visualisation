@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "World Happiness Index 2021",
-  "width": 800,
-  "height": 600,
+  "width": 1000,
+  "height": 550,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/json/countries-110m.topojson",
     "format": {
@@ -55,8 +55,14 @@
         "fill": "lightgray",
         "stroke": "white"
       },
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.name",
+          "as":"note"
+        }
+      ],
       "encoding": {
-        "tooltip": null
+        "tooltip": {"field":"note"}
       }
     },
     {
