@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
       <!-- Bootstrap -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
       <!-- custom CSS -->
@@ -51,26 +52,27 @@
                         Click on the following icons to see correlation between happiness score and 6 factors.
                   </div>
                   <div class="row pink">
-                        <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/gdp.png" alt="Icon unavailable" class="factor-icon">
+                        <div class="col-2 d-flex justify-content-center" >
+                              <img src="resource/gdp.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('gdp_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/corruption.png" alt="Icon unavailable" class="factor-icon">
+                              <img src="resource/corruption.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('corruption_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/freedom.png" alt="Icon unavailable" class="factor-icon">
+                              <img src="resource/freedom.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('freedom_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/generosity.png" alt="Icon unavailable" class="factor-icon">
+                              <img src="resource/generosity.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('generosity_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/growth.png" alt="Icon unavailable" class="factor-icon">
+                              <img src="resource/growth.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('life_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/social-care.png" alt="Icon unavailable" class="factor-icon">
+                              <img src="resource/social-care.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('social_sp')">
                         </div>
                   </div>
-                  <div class="row blue p-3">
+                  
+                  <div class="row blue p-3 sp" id="gdp_sp">
                         <div class="col-3 d-flex justify-content-center">
                               <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
@@ -80,6 +82,62 @@
                               <div id="vis2a"></div>
                         </div>
                   </div>
+
+                  <div class="row blue p-3 sp" id="corruption_sp">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2b"></div>
+                        </div>
+                  </div>
+
+                  <div class="row blue p-3 sp" id="freedom_sp">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2c"></div>
+                        </div>
+                  </div>
+
+                  <div class="row blue p-3 sp" id="generosity_sp">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2d"></div>
+                        </div>
+                  </div>
+
+                  <div class="row blue p-3 sp" id="life_sp">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2e"></div>
+                        </div>
+                  </div>
+
+                  <div class="row blue p-3 sp" id="social_sp">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2f"></div>
+                        </div>
+                  </div>
+
             </div>
       </div>
 
@@ -165,6 +223,31 @@
               // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
 
+            var vis2b = "json/scatterplot_corruption.json";
+            vegaEmbed('#vis2b', vis2b).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2c = "json/scatterplot_freedom.json";
+            vegaEmbed('#vis2c', vis2c).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2d = "json/scatterplot_generosity.json";
+            vegaEmbed('#vis2d', vis2d).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2e = "json/scatterplot_life.vl.json";
+            vegaEmbed('#vis2e', vis2e).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2f = "json/scatterplot_socialsupport.json";
+            vegaEmbed('#vis2f', vis2f).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
             // TODO: Add remaining scatterplot and figure out logic
 
             var vis3 = "json/boxplot.vl.json";
@@ -180,6 +263,8 @@
 
       </script>
 
+      <!-- Custom scripts -->
+      <script type="text/javascript" src="json/scripts.js"></script>
 
       <!-- Bootstrap (Popper) -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
