@@ -1,9 +1,8 @@
 {
   "title": "Happiness Score vs Logged GDP per capita",
-  "width": 800,
-  "height": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "width":600,
+  "height":600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -17,17 +16,20 @@
         "bind": "legend"
       }],
       "encoding": {
-        "x": {
+        "y": {
           "field": "Logged GDP per capita",
           "type": "quantitative",
           "scale": {"zero": false},
-          "title": "Life expectancy (Age)"
+          "title": "Logged GDP per capita"
         },
-        "y": {
+        "x": {
           "field": "Ladder score",
           "type": "quantitative",
           "scale": {"zero": false},
           "title": "Happiness score"
+        },
+        "size":{
+          "field":"Density","type":"quantitative","title":"Density per sq km"
         },
         "color": {
           "field": "Regional indicator",
@@ -36,10 +38,12 @@
         "opacity": {
       "condition": {"param": "region", "value": 1},
       "value": 0.1
-    },
+    }
+    ,
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
-          {"field": "Logged GDP per capita", "type": "quantitative", "title":"Life Expectancy"}
+          {"field": "Logged GDP per capita", "type": "quantitative", "title":"Logged GDP per capita"},
+          {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
       }
     },
@@ -49,8 +53,8 @@
         {"regression": "Logged GDP per capita", "on": "Ladder score"}
       ],
       "encoding": {
-        "x": {"field": "Logged GDP per capita", "type": "quantitative"},
-        "y": {"field": "Ladder score", "type": "quantitative"}
+        "y": {"field": "Logged GDP per capita", "type": "quantitative"},
+        "x": {"field": "Ladder score", "type": "quantitative"}
       }
     }
   ],

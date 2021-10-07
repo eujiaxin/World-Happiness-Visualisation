@@ -1,9 +1,8 @@
 {
-  "title": "Happiness Score vs Perceptions of corruption",
-  "width": 800,
-  "height": 600,
+  "title": "Happiness Score vs Corruption",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "width":600,
+  "height":600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -11,31 +10,40 @@
     {
       "transform": [{"filter": "datum['Perceptions of corruption'] > 0"}],
       "mark": "circle",
+      "params": [{
+        "name": "region",
+        "select": {"type": "point", "fields": ["Regional indicator"]},
+        "bind": "legend"
+      }],
       "encoding": {
-        "x": {
+        "y": {
           "field": "Perceptions of corruption",
           "type": "quantitative",
           "scale": {"zero": false},
-          "title": "Perceptions of corruption"
+          "title": "Corruption"
         },
-        "y": {
+        "x": {
           "field": "Ladder score",
           "type": "quantitative",
           "scale": {"zero": false},
           "title": "Happiness score"
         },
-        "color": {
-          "field": "Regional happiness level",
-          "type": "nominal",
-          "scale": {"range": ["green", "orange", "red"]}
+        "size":{
+          "field":"Density","type":"quantitative","title":"Density per sq km"
         },
+        "color": {
+          "field": "Regional indicator",
+          "type": "nominal"
+        },
+        "opacity": {
+      "condition": {"param": "region", "value": 1},
+      "value": 0.1
+    }
+    ,
         "tooltip": [
-          {
-            "field":"Country","type": "nominal","title":"Country"
-          },
-          {
-            "field":"Perceptions of corruption", "type": "quantitative"
-          }
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Perceptions of corruption", "type": "quantitative", "title":"Corruption"},
+          {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
       }
     }

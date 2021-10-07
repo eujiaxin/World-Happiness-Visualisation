@@ -1,9 +1,9 @@
 {
   "title": "Happiness Score vs Social support",
-  "width": 800,
-  "height": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "width":600,
+  "height":600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -11,24 +11,41 @@
     {
       "transform": [{"filter": "datum['Social support'] > 0"}],
       "mark": "circle",
+      "params": [{
+        "name": "region",
+        "select": {"type": "point", "fields": ["Regional indicator"]},
+        "bind": "legend"
+      }],
       "encoding": {
-        "x": {
+        "y": {
           "field": "Social support",
           "type": "quantitative",
           "scale": {"zero": false},
           "title": "Social support"
         },
-        "y": {
+        "x": {
           "field": "Ladder score",
           "type": "quantitative",
           "scale": {"zero": false},
           "title": "Happiness score"
         },
+        "size":{
+          "field":"Density","type":"quantitative","title":"Density per sq km"
+        },
         "color": {
-          "field": "Regional happiness level",
-          "type": "nominal",
-          "scale": {"range": ["green", "orange", "red"]}
-        }
+          "field": "Regional indicator",
+          "type": "nominal"
+        },
+        "opacity": {
+      "condition": {"param": "region", "value": 1},
+      "value": 0.1
+    }
+    ,
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Social support", "type": "quantitative", "title":"Social support"},
+          {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
+        ]
       }
     },
     {
@@ -37,8 +54,8 @@
         {"regression": "Social support", "on": "Ladder score"}
       ],
       "encoding": {
-        "x": {"field": "Social support", "type": "quantitative"},
-        "y": {"field": "Ladder score", "type": "quantitative"}
+        "y": {"field": "Social support", "type": "quantitative"},
+        "x": {"field": "Ladder score", "type": "quantitative"}
       }
     }
   ],

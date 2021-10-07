@@ -18,7 +18,7 @@
 <body class="vsc-initialized">
       <!-- Header (Title) -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row blue">
                         <div class="col-12 d-flex justify-content-center">
                               <div class="h1">World Happiness Report</div>
@@ -34,7 +34,7 @@
 
       <!-- Choropleth Map Section -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row blue">
                         <div class="col-12 d-flex justify-content-center">
                               <div id="vis1">
@@ -47,94 +47,94 @@
 
       <!-- Scatterplot selection (interactive) -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row blue d-flex justify-content-center p-3">
                         Click on the following icons to see correlation between happiness score and 6 factors.
                   </div>
                   <div class="row pink">
                         <div class="col-2 d-flex justify-content-center" >
-                              <img src="resource/gdp.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('gdp_sp')">
+                              <img src="resource/gdp.png" alt="GDP icon unavailable" class="factor-icon" onclick="toggleScatterPlot('gdp_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/corruption.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('corruption_sp')">
+                              <img src="resource/corruption.png" alt="Corruption icon unavailable" class="factor-icon" onclick="toggleScatterPlot('corruption_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/freedom.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('freedom_sp')">
+                              <img src="resource/freedom.png" alt="IFreedom icon unavailable" class="factor-icon" onclick="toggleScatterPlot('freedom_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/generosity.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('generosity_sp')">
+                              <img src="resource/generosity.png" alt="Generosity icon unavailable" class="factor-icon" onclick="toggleScatterPlot('generosity_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/growth.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('life_sp')">
+                              <img src="resource/growth.png" alt="Life expectancy icon unavailable" class="factor-icon" onclick="toggleScatterPlot('life_sp')">
                         </div>
                         <div class="col-2 d-flex justify-content-center">
-                              <img src="resource/social-care.png" alt="Icon unavailable" class="factor-icon" onclick="toggleScatterPlot('social_sp')">
+                              <img src="resource/social-care.png" alt="Social support icon unavailable" class="factor-icon" onclick="toggleScatterPlot('social_sp')">
                         </div>
                   </div>
                   
                   <div class="row blue p-3 sp" id="gdp_sp">
-                        <div class="col-3 d-flex justify-content-center">
-                              <span>
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
+                              <span class="">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2a"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2a" class="w-100"></div>
                         </div>
                   </div>
 
                   <div class="row blue p-3 sp" id="corruption_sp">
-                        <div class="col-3 d-flex justify-content-center">
-                              <span>
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
+                              <span class="">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2b"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2b" class="w-100"></div>
                         </div>
                   </div>
 
                   <div class="row blue p-3 sp" id="freedom_sp">
-                        <div class="col-3 d-flex justify-content-center">
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
                               <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2c"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2c" class="w-100"></div>
                         </div>
                   </div>
 
                   <div class="row blue p-3 sp" id="generosity_sp">
-                        <div class="col-3 d-flex justify-content-center">
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
                               <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2d"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2d" class="w-100"></div>
                         </div>
                   </div>
 
                   <div class="row blue p-3 sp" id="life_sp">
-                        <div class="col-3 d-flex justify-content-center">
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
                               <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2e"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2e" class="w-100"></div>
                         </div>
                   </div>
 
                   <div class="row blue p-3 sp" id="social_sp">
-                        <div class="col-3 d-flex justify-content-center">
+                        <div class="col-sm-12 col-md-4 d-flex justify-content-center">
                               <span>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
                               </span>
                         </div>
-                        <div class="col-9 d-flex justify-content-center">
-                              <div id="vis2f"></div>
+                        <div class="col-sm-12 col-md-8 d-flex justify-content-center">
+                              <div id="vis2f" class="w-100"></div>
                         </div>
                   </div>
 
@@ -143,7 +143,7 @@
 
       <!-- Boxplot section (Regional happiness) -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row pink">
                         <div class="col-12">
                               <div class="h1">Regional Happiness</div>
@@ -160,7 +160,7 @@
       
       <!-- Bar chart section (Top 10 saddest and happiest countries) -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row pink">
                         <div class="col-12">
                               <div class="h1">Top 10 countries</div>
@@ -174,7 +174,7 @@
       
       <!-- Radar chart section -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row pink">
                         <div class="col-12">
                               <div class="h1">Breaking down by region</div>
@@ -200,7 +200,7 @@
 
       <!-- Conclusion section -->
       <div class="section p-3">
-            <div class="container-fluid">
+            <div class="container">
                   <div class="row pink">
                         <div class="h1">Conclusion</div>
                         <div class="col-12">
