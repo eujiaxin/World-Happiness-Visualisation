@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+      <!-- custom CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Vegalite -->
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      <title>World Happiness Visualisation</title>
+</head>
+<body class="vsc-initialized">
+      <!-- Header (Title) -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row blue">
+                        <div class="col-12 d-flex justify-content-center">
+                              <div class="h1">World Happiness Report</div>
+                        </div>
+                  </div>
+                  <div class="row pink mt-3">
+                        <div class="col-12 d-flex justify-content-center">
+                              <div class="span">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum voluptate quos, aliquam sed est nemo? Amet architecto tempora voluptatum dolore veritatis recusandae praesentium, quisquam velit quam eaque dicta impedit iste quidem unde fuga assumenda facilis soluta iure dignissimos! Exercitationem, voluptatibus.</div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Choropleth Map Section -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row blue">
+                        <div class="col-12 d-flex justify-content-center">
+                              <div id="vis1">
+
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Scatterplot selection (interactive) -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row blue d-flex justify-content-center p-3">
+                        Click on the following icons to see correlation between happiness score and 6 factors.
+                  </div>
+                  <div class="row pink">
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/gdp.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/corruption.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/freedom.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/generosity.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/growth.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                              <img src="resource/social-care.png" alt="Icon unavailable" class="factor-icon">
+                        </div>
+                  </div>
+                  <div class="row blue p-3">
+                        <div class="col-3 d-flex justify-content-center">
+                              <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates modi, quas delectus architecto ipsa sed consectetur, consequuntur itaque nemo officiis tenetur recusandae quae debitis nam quaerat laudantium odio! Fugit ab aperiam quam eius illum placeat modi sequi vero suscipit quisquam.
+                              </span>
+                        </div>
+                        <div class="col-9 d-flex justify-content-center">
+                              <div id="vis2a"></div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Boxplot section (Regional happiness) -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row pink">
+                        <div class="col-12">
+                              <div class="h1">Regional Happiness</div>
+                        </div>
+                        <div class="col-9">
+                              <div id="vis3"></div>
+                        </div>
+                        <div class="col-3">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo sit autem adipisci, optio ipsum? Odit reprehenderit voluptatibus, id quaerat fugiat ullam, distinctio placeat voluptate eum architecto libero qui porro provident, eaque quos ut quod veritatis quisquam non! Minus ratione quos enim repellendus nobis ab eveniet sapiente laboriosam pariatur quaerat?
+                        </div>
+                  </div>
+            </div>
+      </div>
+      
+      <!-- Bar chart section (Top 10 saddest and happiest countries) -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row pink">
+                        <div class="col-12">
+                              <div class="h1">Top 10 countries</div>
+                        </div>
+                        <div class="col-12">
+                              <div id="vis4"></div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      
+      <!-- Radar chart section -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row pink">
+                        <div class="col-12">
+                              <div class="h1">Breaking down by region</div>
+                        </div>
+                        <div class="col-12">
+                              <div class="flourish-embed flourish-radar" data-src="visualisation/7408433"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Line chart section -->
+      <!-- <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row pink">
+                        <div class="h1">Always happy? Always sad?</div>
+                        <div class="col-12">
+                              <div class="flourish-embed flourish-chart" data-src="visualisation/7417397"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                        </div>
+                  </div>
+            </div>
+      </div> -->
+
+      <!-- Conclusion section -->
+      <div class="section p-3">
+            <div class="container-fluid">
+                  <div class="row pink">
+                        <div class="h1">Conclusion</div>
+                        <div class="col-12">
+                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste iusto, adipisci fugit, distinctio eaque nihil libero ducimus quam quasi aperiam illum delectus quas laboriosam omnis, explicabo quos. Laudantium iste ea rem? Quisquam voluptas repellat nemo placeat rem, ex quod nulla sit sunt? Eaque dolorum at aliquam quis. Architecto, laboriosam? Nam unde libero quisquam quaerat incidunt et nobis cum debitis, nesciunt asperiores corrupti modi culpa sint tenetur tempora! Earum eos laborum atque! Nemo pariatur ad, quos soluta aspernatur eos quo officia porro, sequi possimus ipsam est sint magnam ducimus. Placeat inventore aspernatur blanditiis molestias possimus eius maxime quaerat hic quam harum!
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <!-- Vegalite Embeds -->
+      <script type="text/javascript">
+
+            var vis1 = "json/choropleth.vl.json";
+            vegaEmbed('#vis1', vis1).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis2a = "json/scatterplot_gdp.vl.json";
+            vegaEmbed('#vis2a', vis2a).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            // TODO: Add remaining scatterplot and figure out logic
+
+            var vis3 = "json/boxplot.vl.json";
+            vegaEmbed('#vis3', vis3).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+            var vis4 = "json/barchart.vl.json";
+            vegaEmbed('#vis4', vis4).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+
+
+      </script>
+
+
+      <!-- Bootstrap (Popper) -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>
