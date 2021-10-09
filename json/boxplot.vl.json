@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A horizontal box plot showing median, min, and max",
-  "height":600,
-  "width":600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
+  "width":400,
+  "height":500,
   "layer":[
 {
    "mark": {"type": "boxplot", "extent": "min-max"},

@@ -85,7 +85,9 @@
           "filter":  "Region_selection == null || datum['Regional indicator'] == Region_selection"
         }
       ],
-      "mark": {
+      "layer":[
+          {
+                  "mark": {
         "type": "geoshape"
       },
       "encoding": {
@@ -112,6 +114,23 @@
           }
         ]
       }
+          },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "Ladder score", "order": "descending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "'The happiest country is ' + datum.properties.name + ' with happiness score of ' + datum['Ladder score']",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {"type": "text", "align": "left", "dx": -50, "dy":150},
+      "encoding": {"text": {"field": "text_annotation"}}
+    }
+      ]
     }
   ]
 }

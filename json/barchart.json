@@ -1,0 +1,59 @@
+{
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "data": {
+        "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/happiest-to-saddest-countries-top-20.csv"
+      },
+      "layer": [{
+        "params": [{
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        },
+        {
+            "name": "region",
+            "select": {"type": "point", "fields": ["Regional indicator"]},
+              "bind": "legend"
+        }],
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Country",
+            "type": "nominal",
+            "sort":"y"
+          },
+          "y": {
+            "field": "Ladder score",
+            "type": "quantitative",
+            "title":"Happiness score"
+          },
+          "color":{
+            "field":"Regional indicator",
+            "scale":{
+              "scheme":"tableau10"
+            },
+            "title":"Region"
+          },
+          "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.4},
+          "tooltip": [
+            {"field":"Country","type": "nominal"},
+            {"field":"Regional indicator","type":"nominal"},
+            {"field":"Ladder score","type": "quantitative", "title":"Happiness score"}
+          ]
+        }
+      }, {
+        "transform": [{
+          "filter": {"param": "brush"}
+        }],
+        "mark": "rule",
+        "encoding": {
+          "y": {
+            "aggregate": "mean",
+            "field": "Ladder score",
+            "type": "quantitative"
+          },
+          "color": {"value": "firebrick"},
+          "size": {"value": 3}
+        }
+      }
+      ]
+    }
+    
