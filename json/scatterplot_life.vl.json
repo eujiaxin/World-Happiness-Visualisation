@@ -34,7 +34,8 @@
         },
         "color": {
           "field": "Regional indicator",
-          "type": "nominal"
+          "type": "nominal",
+          "title":"Region"
         },
         "opacity": {
       "condition": {"param": "region", "value": 1},
@@ -42,7 +43,11 @@
     }
     ,
         "tooltip": [
-          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Country", "type": "nominal", "title": "Country"},          {
+            "field": "Regional indicator",
+            "type": "nominal",
+            "title": "Region"
+          },
           {"field": "Healthy life expectancy", "type": "quantitative", "title":"Healthy life expectancy"},
           {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
@@ -56,6 +61,78 @@
       "encoding": {
         "y": {"field": "Healthy life expectancy", "type": "quantitative"},
         "x": {"field": "Ladder score", "type": "quantitative"}
+      }
+    },
+        {
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Japan",
+              "Burundi",
+              "Taiwan",
+              "Haiti",
+              "India",
+              "South Korea",
+              "Nigeria",
+              "Switzerland",
+              "China",
+              "Philippines"        
+          ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Healthy life expectancy",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'Most Sub-Saharan African countries have short healthy life expectancy'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight":"bold",
+        "dx":-30,
+        "dy":200
+      },
+      "encoding": {
+        "text": {
+          "field": "text_annotation"
+        },
+        "color":{"value":"brown"}
       }
     }
   ],

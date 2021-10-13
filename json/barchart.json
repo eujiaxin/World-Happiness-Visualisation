@@ -1,59 +1,84 @@
 {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "data": {
-        "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/happiest-to-saddest-countries-top-20.csv"
-      },
-      "layer": [{
-        "params": [{
-          "name": "brush",
-          "select": {"type": "interval", "encodings": ["x"]}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 700,
+  "width": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/happiest-to-saddest-countries-top-20.csv"
+  },
+  "layer": [
+    {
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "Country", "type": "nominal", "sort": "y"},
+        "y": {
+          "field": "Ladder score",
+          "type": "quantitative",
+          "title": "Happiness score"
         },
-        {
-            "name": "region",
-            "select": {"type": "point", "fields": ["Regional indicator"]},
-              "bind": "legend"
-        }],
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "Country",
-            "type": "nominal",
-            "sort":"y"
-          },
-          "y": {
+        "color": {"field": "Regional indicator", "title": "Region", "scale":{"range":["#72B7b2","#54A24B","#EECa3B","#B279A2","#9D755D","#BAB0AC"]}},
+        "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.4},
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Regional indicator", "type": "nominal"},
+          {
             "field": "Ladder score",
             "type": "quantitative",
-            "title":"Happiness score"
-          },
-          "color":{
-            "field":"Regional indicator",
-            "scale":{
-              "scheme":"tableau10"
-            },
-            "title":"Region"
-          },
-          "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.4},
-          "tooltip": [
-            {"field":"Country","type": "nominal"},
-            {"field":"Regional indicator","type":"nominal"},
-            {"field":"Ladder score","type": "quantitative", "title":"Happiness score"}
-          ]
-        }
-      }, {
-        "transform": [{
-          "filter": {"param": "brush"}
-        }],
-        "mark": "rule",
-        "encoding": {
-          "y": {
-            "aggregate": "mean",
-            "field": "Ladder score",
-            "type": "quantitative"
-          },
-          "color": {"value": "firebrick"},
-          "size": {"value": 3}
-        }
+            "title": "Happiness score"
+          }
+        ]
       }
-      ]
+    },
+    {
+      "transform": [{"filter": {"param": "brush"}}],
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "color": {"value": "firebrick"},
+        "size": {"value": 3}
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"param": "brush"}},
+        {
+          "joinaggregate": [
+            {
+              "op": "mean",
+              "field": "Ladder score",
+              "as": "Average Happiness score"
+            }
+          ]
+        },
+        {
+          "joinaggregate": [
+            {"op": "max", "field": "Ladder score", "as": "max_score"}
+          ]
+        },
+        {"filter": "datum['Ladder score'] == datum['max_score'] "}
+      ],
+      "mark": {"type": "text", "fontWeight": "lighter", "dx": -210, "dy": -330},
+      "encoding": {
+        "text": {"field": "Average Happiness score", "format": ".2f"},
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Country == 'Afghanistan'"},
+        {"calculate": "'Average Happiness score ='", "as": "text_annotation"}
+      ],
+      "mark": {"type": "text", "fontWeight": "bold", "dx": -300, "dy": -330},
+      "encoding": {
+        "text": {"field": "text_annotation"},
+        "color": {"value": "black"}
+      }
     }
-    
+  ]
+}

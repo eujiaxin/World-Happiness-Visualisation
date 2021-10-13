@@ -1,60 +1,176 @@
 {
   "title": "Happiness Score vs Logged GDP per capita",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width":600,
-  "height":600,
+  "width": 600,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
   "layer": [
     {
-      "transform": [{"filter": "datum['Logged GDP per capita'] > 0"}],
+      "transform": [
+        {
+          "filter": "datum['Logged GDP per capita'] > 0"
+        }
+      ],
       "mark": "circle",
-      "params": [{
-        "name": "region",
-        "select": {"type": "point", "fields": ["Regional indicator"]},
-        "bind": "legend"
-      }],
+      "params": [
+        {
+          "name": "region",
+          "select": {
+            "type": "point",
+            "fields": [
+              "Regional indicator"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
       "encoding": {
         "y": {
           "field": "Logged GDP per capita",
           "type": "quantitative",
-          "scale": {"zero": false},
+          "scale": {
+            "zero": false
+          },
           "title": "Logged GDP per capita"
         },
         "x": {
           "field": "Ladder score",
           "type": "quantitative",
-          "scale": {"zero": false},
+          "scale": {
+            "zero": false
+          },
           "title": "Happiness score"
         },
-        "size":{
-          "field":"Density","type":"quantitative","title":"Density per sq km"
+        "size": {
+          "field": "Density",
+          "type": "quantitative",
+          "title": "Density per sq km"
         },
         "color": {
           "field": "Regional indicator",
-          "type": "nominal"
+          "type": "nominal",
+          "title": "Region"
         },
         "opacity": {
-      "condition": {"param": "region", "value": 1},
-      "value": 0.1
-    }
-    ,
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        },
         "tooltip": [
-          {"field": "Country", "type": "nominal", "title": "Country"},
-          {"field": "Logged GDP per capita", "type": "quantitative", "title":"Logged GDP per capita"},
-          {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
+          {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+          },          {
+            "field": "Regional indicator",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "Logged GDP per capita",
+            "type": "quantitative",
+            "title": "Logged GDP per capita"
+          },
+          {
+            "field": "Density",
+            "type": "quantitative",
+            "title": "Density (per sq km)"
+          }
         ]
       }
     },
     {
-      "mark": {"type": "line", "color": "lightgray"},
+      "mark": {
+        "type": "line",
+        "color": "lightgray"
+      },
       "transform": [
-        {"regression": "Logged GDP per capita", "on": "Ladder score"}
+        {
+          "regression": "Logged GDP per capita",
+          "on": "Ladder score"
+        }
       ],
       "encoding": {
-        "y": {"field": "Logged GDP per capita", "type": "quantitative"},
-        "x": {"field": "Ladder score", "type": "quantitative"}
+        "y": {
+          "field": "Logged GDP per capita",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Malaysia",
+              "Luxembourg",
+              "Burundi",
+              "Taiwan",
+              "Haiti",
+              "India"        
+          ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Logged GDP per capita",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'All Western European countries have high economic production'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight":"bold",
+        "dx":-30,
+        "dy":-250
+      },
+      "encoding": {
+        "text": {
+          "field": "text_annotation"
+        },
+        "color":{"value":"grey"}
       }
     }
   ],

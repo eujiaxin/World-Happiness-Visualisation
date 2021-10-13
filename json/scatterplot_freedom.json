@@ -34,7 +34,8 @@
         },
         "color": {
           "field": "Regional indicator",
-          "type": "nominal"
+          "type": "nominal",
+          "title":"Region"
         },
         "opacity": {
       "condition": {"param": "region", "value": 1},
@@ -43,6 +44,11 @@
     ,
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
+          {
+            "field": "Regional indicator",
+            "type": "nominal",
+            "title": "Region"
+          },
           {"field": "Freedom to make life choices", "type": "quantitative", "title":"Freedom to make life choices"},
           {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
@@ -56,6 +62,76 @@
       "encoding": {
         "y": {"field": "Freedom to make life choices", "type": "quantitative"},
         "x": {"field": "Ladder score", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Malaysia",
+              "Denmark",
+              "South Korea",
+              "Lebanon",
+              "Burundi",
+              "Taiwan",
+              "Haiti",
+              "India"        
+          ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Freedom to make life choices",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'All Southeast Asian countries have high level of freedom'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight":"bold",
+        "dx":0,
+        "dy":-280
+      },
+      "encoding": {
+        "text": {
+          "field": "text_annotation"
+        },
+        "color":{"value":"#E11584"}
       }
     }
   ],

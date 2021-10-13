@@ -1,0 +1,90 @@
+{
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "data": {
+        "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-with-regions.csv"
+      },
+      "vconcat": [
+        {
+          "height":400,
+          "width":800,
+          "mark": "bar",
+          "title": "Happiness over the years (2005-2020)",
+          "transform": [
+            {
+              "filter":{"param": "time_brush"}
+            },
+            {
+              "filter":"datum['Regional indicator'] != 'NA'"
+            },
+            {
+              "filter":"datum.year > 2005"
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Regional indicator",
+              "type":"nominal",
+              "axis":null
+    
+            },
+            "y": {
+              "aggregate":"average",
+              "field":"Life Ladder",
+              "type": "quantitative",
+              "title": "Happiness score"
+            },
+            "color":{
+              "field":"Regional indicator",
+              "title":"Region"
+            },
+            "tooltip":[
+              {
+                "field":"Regional indicator","title":"Region"
+              }
+            ]
+          }
+        },
+            {
+          "height":400,
+          "width":800,
+          "mark": "line",
+          "title": "Happiness over the years (2005-2020)",
+          "transform": [
+            {
+              "filter":"datum['Regional indicator'] != 'NA'"
+            },
+            {
+              "filter":"datum.year > 2005"
+            }
+          ],
+          "params": [
+            {
+              "name": "time_brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type":"nominal"
+                      },
+            "y": {
+              "aggregate": "average",
+              "field":"Life Ladder",
+              "title": "Happiness score",
+              "sort":"strokeWidth"
+    
+            },
+            "color":{
+              "field":"Regional indicator"
+            },
+            "tooltip":[
+              {
+                "field":"Regional indicator","title":"Region"
+              }
+            ]
+          }
+        }
+      ],
+      "config": {"title": {"font": "sans-serif", "fontSize": 14}}
+    }

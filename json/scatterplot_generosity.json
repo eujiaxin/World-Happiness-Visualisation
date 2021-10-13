@@ -33,7 +33,8 @@
         },
         "color": {
           "field": "Regional indicator",
-          "type": "nominal"
+          "type": "nominal",
+          "title":"Region"
         },
         "opacity": {
       "condition": {"param": "region", "value": 1},
@@ -41,10 +42,86 @@
     }
     ,
         "tooltip": [
-          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Country", "type": "nominal", "title": "Country"},          {
+            "field": "Regional indicator",
+            "type": "nominal",
+            "title": "Region"
+          },
           {"field": "Generosity", "type": "quantitative", "title":"Generosity"},
           {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
+      }
+    },
+        {
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Malaysia",
+              "Luxembourg",
+              "Burundi",
+              "Indonesia",
+              "Haiti",
+              "India",
+              "Japan",
+              "Czechia",
+              "Myanmar",
+              "Thailand"       
+          ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Generosity",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'Indonesia and Myanmar are generous despite having below average happiness scores'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight":"bold",
+        "dx":-30,
+        "dy":-280
+      },
+      "encoding": {
+        "text": {
+          "field": "text_annotation"
+        },
+        "color":{"value":"#E11584"}
       }
     }
   ],

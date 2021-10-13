@@ -33,7 +33,8 @@
         },
         "color": {
           "field": "Regional indicator",
-          "type": "nominal"
+          "type": "nominal",
+          "title": "Region"
         },
         "opacity": {
       "condition": {"param": "region", "value": 1},
@@ -42,9 +43,83 @@
     ,
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
+          {
+            "field": "Regional indicator",
+            "type": "nominal",
+            "title": "Region"
+          },
           {"field": "Perceptions of corruption", "type": "quantitative", "title":"Corruption"},
           {"field":"Density","type":"quantitative","title":"Density (per sq km)"}
         ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Malaysia",
+              "Denmark",
+              "Burundi",
+              "Taiwan",
+              "Haiti",
+              "India",
+              "Rwanda"        
+          ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 15
+      },
+      "encoding": {
+        "x": {
+          "field": "Ladder score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Perceptions of corruption",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "param": "region",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'Most Western European countries are free from corruption'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontWeight":"bold",
+        "dx":20,
+        "dy":150
+      },
+      "encoding": {
+        "text": {
+          "field": "text_annotation"
+        },
+        "color":{"value":"grey"}
       }
     }
   ],

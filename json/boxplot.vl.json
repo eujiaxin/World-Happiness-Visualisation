@@ -1,39 +1,169 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A horizontal box plot showing median, min, and max",
+  "title":"Happiness score based on different regions",
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
-  "width":400,
+  "width":800,
   "height":500,
   "layer":[
 {
-   "mark": {"type": "boxplot", "extent": "min-max"},
+   "mark": {"type": "boxplot"},
   "encoding": {
-    "y": {"field": "Regional indicator", "type": "nominal"},
+    "y": {"field": "Regional indicator", "type": "nominal",
+    "axis":{
+    }},
     "x": {
       "field": "Ladder score",
       "type": "quantitative",
-      "scale": {"zero": false}
+      "scale": {"zero": false},
+      "title":"Happiness score"
     },
     "color": {
-      "field": "Regional happiness level",
-      "type": "nominal"
-    }
+      "field": "Regional indicator",
+      "type": "nominal",
+      "legend":null
+    },
+    "tooltip":[
+      {"field":"Country","type":"nominal"},
+      {"field":"Regional indicator","type": "nominal","title":"Region"},
+      {"field":"Ladder score","type":"quantitative","title":"Happiness score"}
+    ]
   }
 },
 {
+  "transform": [
+    {
+      "calculate": "5.46","as":"mean"
+    }
+  ],
   "mark": "rule",
       "encoding": {
         "x": {
           "aggregate": "mean",
           "field": "Ladder score",
-          "type": "quantitative"
-        },
-        "color": {"value": "grey"},
-        "size": {"value": 2}
-        
+          "type": "quantitative"        },
+        "color": {"value": "firebrick"},
+        "size": {"value": 3},
+        "tooltip":[
+          {"field":"mean","title":"Average Happiness score"}
+        ]
       }
-}
+},
+{
+  "transform": [
+    {
+      "filter":"datum.Country == 'Taiwan'"
+    },
+    {
+      "calculate": "'Taiwan is by far the happiest East Asian country'",
+      "as": "text_annotation"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "fontWeight":"bold",
+    "dx":300,
+    "dy":-145
+  },
+  "encoding": {
+    "text": {
+      "field": "text_annotation"
+    },
+    "color":{"value":"red"}
+  }
+},
+{
+  "transform": [
+    {
+      "filter":"datum.Country == 'Taiwan'"
+    },
+    {
+      "calculate": "'Western Europe is the overall happiest region'",
+      "as": "text_annotation"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "fontWeight":"bold",
+    "dx":300,
+    "dy":200
+  },
+  "encoding": {
+    "text": {
+      "field": "text_annotation"
+    },
+    "color":{"value":"grey"}
+  }
+},
+{
+  "transform": [
+    {
+      "filter":"datum.Country == 'Haiti'"
+    },
+    {
+      "calculate": "'Haiti is by far the unhappiest Caribbean country'",
+      "as": "text_annotation"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "fontWeight":"bold",
+    "dx":-250,
+    "dy":-94
+  },
+  "encoding": {
+    "text": {
+      "field": "text_annotation"
+    },
+    "color":{"value":"#59AAA5"}
+  }
+},
+{
+  "transform": [
+    {
+      "filter":"datum.Country == 'Haiti'"
+    },
+    {
+      "calculate": "'South Asia is the overall unhappiest region'",
+      "as": "text_annotation"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "fontWeight":"bold",
+    "dx":-200,
+    "dy":50
+  },
+  "encoding": {
+    "text": {
+      "field": "text_annotation"
+    },
+    "color":{"value":"purple"}
+  }
+},
+{
+  "transform": [
+    {
+      "filter":"datum.Country == 'Haiti'"
+    },
+    {
+      "calculate": "'Average Happiness score = 5.46'",
+      "as": "text_annotation"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "fontWeight":"bold",
+    "dx":125,
+    "dy":50
+  },
+  "encoding": {
+    "text": {
+      "field": "text_annotation"
+    },
+    "color":{"value":"black"}
+  }}
   ]
 }

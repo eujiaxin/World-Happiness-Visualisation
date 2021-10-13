@@ -5,16 +5,13 @@
   "height": 550,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/json/countries-110m.topojson",
-    "format": {
-      "type": "topojson",
-      "feature": "countries"
-    }
+    "format": {"type": "topojson", "feature": "countries"}
   },
   "params": [
     {
-      "name":"Region_selection",
+      "name": "Region_selection",
       "bind": {
-        "input":"select",
+        "input": "select",
         "options": [
           null,
           "Western Europe",
@@ -28,45 +25,28 @@
           "Middle East and North Africa",
           "Sub-Saharan Africa"
         ],
-    "labels":[
-      "Show All",
-      "Western Europe"
-    ],
-  "name": "Region Selection:"
+        "labels": ["Show All", "Western Europe"],
+        "name": "Region Selection:"
       }
     }
   ],
-  "projection": {
-    "type": "equirectangular"
-  },
+  "projection": {"type": "equirectangular"},
   "layer": [
-    
     {
-
       "data": {
         "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/json/countries-110m.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "format": {"type": "topojson", "feature": "countries"}
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
       "transform": [
         {
           "calculate": "'Data is not available in ' + datum.properties.name",
-          "as":"note"
+          "as": "note"
         }
       ],
-      "encoding": {
-        "tooltip": {"field":"note"}
-      }
+      "encoding": {"tooltip": {"field": "note"}}
     },
     {
-      
       "transform": [
         {
           "lookup": "properties.name",
@@ -75,60 +55,74 @@
               "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
             },
             "key": "Country",
-            "fields": [
-              "Ladder score",
-              "Regional indicator"
+            "fields": ["Ladder score", "Regional indicator"]
+          }
+        },
+        {
+          "filter": "Region_selection == null || datum['Regional indicator'] == Region_selection"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {"type": "geoshape"},
+          "encoding": {
+            "color": {
+              "title": "Happiness Score",
+              "field": "Ladder score",
+              "type": "quantitative",
+              "scale": {"domain": [2, 8], "scheme": "redyellowgreen"}
+            },
+            "tooltip": [
+              {
+                "field": "properties.name",
+                "type": "nominal",
+                "title": "Country"
+              },
+              {
+                "field": "Regional indicator",
+                "type": "nominal",
+                "title": "Region"
+              },
+              {
+                "field": "Ladder score",
+                "type": "quantitative",
+                "title": "Happiness Score",
+                "format": ".2f"
+              }
             ]
           }
         },
-        {
-          "filter":  "Region_selection == null || datum['Regional indicator'] == Region_selection"
-        }
-      ],
-      "layer":[
-          {
-                  "mark": {
-        "type": "geoshape"
-      },
+            {
+      "data": {"url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"},
       "encoding": {
-        "color": {
-          "title": "Happiness Score",
-          "field": "Ladder score",
-          "type": "quantitative",
-          "scale": {
-            "domain":[2,8],
-            "scheme": "redyellowgreen"
-          }
-        },
-        "tooltip": [
-          {
-            "field": "properties.name",
-            "type": "nominal",
-            "title": "Country"
-          },
-          {
-            "field": "Ladder score",
-            "type": "quantitative",
-            "title": "Happiness Score",
-            "format": ".2f"
-          }
-        ]
-      }
-          },
-    {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"}
+      },
       "transform": [
         {
-          "window": [{"op": "rank", "as": "ranking"}],
-          "sort": [{"field": "Ladder score", "order": "descending"}]
+          "filter":"Region_selection == null || datum['Regional indicator'] == Region_selection"
         },
-        {"filter": "datum.ranking == 1"},
-        {
-          "calculate": "'The happiest country is ' + datum.properties.name + ' with happiness score of ' + datum['Ladder score']",
-          "as": "text_annotation"
-        }
+          {
+              "window": [{"op": "rank", "as": "ranking"}],
+              "sort": [{"field": "Ladder score", "order": "descending"}]
+            },
+            {"filter": "datum.ranking == 1"},
+            {
+              "calculate": "'The happiest country in ' + datum['Regional indicator'] + ' is ' + datum.Country",
+              "as": "text_annotation"
+            }
       ],
-      "mark": {"type": "text", "align": "left", "dx": -50, "dy":150},
-      "encoding": {"text": {"field": "text_annotation"}}
+      "layer": [
+        {
+          "mark": {
+            "type": "text"
+          },
+          "encoding": {
+            "text": {"field": "text_annotation"},
+            "color": {"value": "black"}
+          }
+        }
+      ]
     }
       ]
     }
