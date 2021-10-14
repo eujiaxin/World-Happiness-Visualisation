@@ -28,12 +28,6 @@
   filter: grayscale(0%);
   filter: brightness(110%);
 }
-/* set a max-width for horizontal fluid layout and make it centered */
-/* .container-fluid {
-	margin-right: auto;
-	margin-left: auto;
-	max-width: 1400px; 
-    } */
 
 .sp {
   display: none;
@@ -63,12 +57,10 @@ body {
 }
 
 .container {
-  box-shadow: 6px 10px #7c7c7c;
+  border: 1px solid;
+  box-shadow: 5px 10px #919191;
 }
 
-.div {
-  border-width: 10px;
-}
 
 select {
   background-color: rgb(255, 255, 255);
