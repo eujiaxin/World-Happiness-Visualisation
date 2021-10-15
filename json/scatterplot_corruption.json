@@ -1,8 +1,8 @@
 {
   "title": "Happiness Score vs Corruption",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width":600,
-  "height":600,
+  "width": 580,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -63,7 +63,6 @@
               "Denmark",
               "Burundi",
               "Taiwan",
-              "Haiti",
               "India",
               "Rwanda"        
           ]
@@ -105,23 +104,79 @@
           "filter":"datum.Country == 'Luxembourg'"
         },
         {
-          "calculate": "'Most Western European countries are free from corruption'",
+          "calculate": "'Most Western European countries lb are free from corruption'",
           "as": "text_annotation"
         }
       ],
       "mark": {
         "type": "text",
         "fontWeight":"bold",
-        "dx":20,
-        "dy":150
+        "dx":70,
+        "dy":120
       },
       "encoding": {
         "text": {
           "field": "text_annotation"
         },
-        "color":{"value":"grey"}
+        "color":{"value":"grey"},
+        "size": {
+          "value": 15
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter":"datum.Country == 'Luxembourg'"
+        },
+        {
+          "calculate": "'80% of corrupted Rwandan lb officials are punished'",
+          "as": "text_annotation2"
+        }
+      ],
+      "mark":{
+        "type":"text",
+        "fontWeight":"bold",
+        "dx":-190,
+        "dy":210
+      }
+    ,
+    
+      "encoding":{
+        "text": {
+          "field": "text_annotation2"
+        },
+        "color":{"value":"#964B00"},
+        "size": {
+          "value": 15
+        }
       }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter"
+    },
+"autosize":{"type":"pad"},
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  }
+},
+"legend": {
+  "columns":1,
+  "labelLimit":300
+}
+}
 }

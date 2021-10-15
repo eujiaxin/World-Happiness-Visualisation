@@ -2,8 +2,8 @@
   "title": "Happiness Score vs Freedom to make life choices",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
-  "width":600,
-  "height":600,
+  "width": 580,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -55,7 +55,7 @@
       }
     },
     {
-      "mark": {"type": "line", "color": "lightgray"},
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
         {"regression": "Freedom to make life choices", "on": "Ladder score"}
       ],
@@ -70,11 +70,10 @@
           "filter": {
             "field": "Country",
             "oneOf": [
-              "Malaysia",
+              "Vietnam",
               "Denmark",
               "South Korea",
               "Lebanon",
-              "Burundi",
               "Taiwan",
               "Haiti",
               "India"        
@@ -117,23 +116,51 @@
           "filter":"datum.Country == 'Luxembourg'"
         },
         {
-          "calculate": "'All Southeast Asian countries have high level of freedom'",
+          "calculate": "'All Southeast Asian countries lb have high level of freedom'",
           "as": "text_annotation"
         }
       ],
       "mark": {
         "type": "text",
         "fontWeight":"bold",
-        "dx":0,
-        "dy":-280
+        "dx":-100,
+        "dy":-250
       },
       "encoding": {
         "text": {
           "field": "text_annotation"
         },
-        "color":{"value":"#E11584"}
+        "color":{"value":"#f56991"},
+        "size": {
+          "value": 15
+        }
       }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter"
+    },
+"autosize":{"type":"pad"},
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  }
+},
+"legend": {
+  "columns":1,
+  "labelLimit":300
+}
+}
 }

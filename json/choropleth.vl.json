@@ -107,23 +107,39 @@
             },
             {"filter": "datum.ranking == 1"},
             {
-              "calculate": "'The happiest country in ' + datum['Regional indicator'] + ' is ' + datum.Country",
+              "calculate": "'Happiest country in ' + datum['Regional indicator'] + ': ' + datum.Country",
               "as": "text_annotation"
             }
       ],
       "layer": [
         {
           "mark": {
-            "type": "text"
+            "type": "text",
+            "strokeWidth":30,
+            "dy":40,
+            "dx":-60
           },
           "encoding": {
             "text": {"field": "text_annotation"},
-            "color": {"value": "black"}
+            "color": {"value": "black"},
+            "size": {"value": 16}
           }
         }
       ]
     }
       ]
     }
-  ]
+  ],
+  "config": {
+    "padding": {"top": 20, "right": 20, "bottom": 0, "left": 20},
+    "style": {
+      "guide-label": {"font": "Source Sans Pro, sans-serif", "fontSize": 16},
+      "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 16},
+      "group-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 16},
+      "text": {
+        "font":"Source Sans Pro, sans-serif",
+        "fontWeight":"bold"
+      }
+    }
+  }
 }

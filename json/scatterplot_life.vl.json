@@ -2,8 +2,8 @@
   "title": "Happiness Score vs Healthy life expectancy",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
-  "width":600,
-  "height":600,
+  "width": 580,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -54,7 +54,7 @@
       }
     },
     {
-      "mark": {"type": "line", "color": "lightgray"},
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
         {"regression": "Healthy life expectancy", "on": "Ladder score"}
       ],
@@ -118,7 +118,7 @@
           "filter":"datum.Country == 'Luxembourg'"
         },
         {
-          "calculate": "'Most Sub-Saharan African countries have short healthy life expectancy'",
+          "calculate": "'Most Sub-Saharan African countries  lb have short healthy life expectancy'",
           "as": "text_annotation"
         }
       ],
@@ -132,9 +132,34 @@
         "text": {
           "field": "text_annotation"
         },
-        "color":{"value":"brown"}
+        "color":{"value":"#964B00"},
+        "size":{"value":15}
       }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter"    },
+"autosize":{"type":"pad"},
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  }
+},
+"legend": {
+  "columns":1,
+  "labelLimit":300
+}
+}
 }

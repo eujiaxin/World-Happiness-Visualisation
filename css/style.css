@@ -7,6 +7,10 @@
 	width: 800px;*/
 }
 
+.bgwhite {
+  background-color: #ffffff;
+}
+
 .bg1 {
   background-color: rgb(252, 244, 172);
 }
@@ -39,7 +43,7 @@
 
 body {
   font-size: large;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   background-color: #ffffff;
 }
 
@@ -66,3 +70,4 @@ select {
   background-color: rgb(255, 255, 255);
   padding: 2px;
 }
+

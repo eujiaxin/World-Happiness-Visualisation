@@ -1,7 +1,7 @@
 {
   "title": "Happiness Score vs Logged GDP per capita",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
+  "width": 580,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
@@ -65,7 +65,8 @@
             "field": "Country",
             "type": "nominal",
             "title": "Country"
-          },          {
+          },
+          {
             "field": "Regional indicator",
             "type": "nominal",
             "title": "Region"
@@ -86,7 +87,7 @@
     {
       "mark": {
         "type": "line",
-        "color": "lightgray"
+        "color": "firebrick"
       },
       "transform": [
         {
@@ -116,8 +117,8 @@
               "Burundi",
               "Taiwan",
               "Haiti",
-              "India"        
-          ]
+              "India"
+            ]
           }
         }
       ],
@@ -153,26 +154,56 @@
     {
       "transform": [
         {
-          "filter":"datum.Country == 'Luxembourg'"
+          "filter": "datum.Country == 'Luxembourg'"
         },
         {
-          "calculate": "'All Western European countries have high economic production'",
+          "calculate": "'All Western European countries lb have high economic production'",
           "as": "text_annotation"
         }
       ],
       "mark": {
         "type": "text",
-        "fontWeight":"bold",
-        "dx":-30,
-        "dy":-250
+        "fontWeight": "bold",
+        "dx": 50,
+        "dy": -260
       },
       "encoding": {
         "text": {
           "field": "text_annotation"
         },
-        "color":{"value":"grey"}
+        "color": {
+          "value": "grey"
+        },
+        "size": {
+          "value": 15
+        }
       }
     }
   ],
-  "config": {}
+  "config": {
+        "axis": {
+          "labelColor": "black",
+          "titleColor": "black",
+          "gridColor": "lighter"
+        },
+    "autosize":{"type":"pad"},
+    "lineBreak":"lb",
+    "title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+    "padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+    "style": {
+      "guide-title": {
+        "font": "Source Sans Pro, sans-serif",
+        "fontSize":15
+      },
+      "text": {
+        "font": "Source Sans Pro, sans-serif",
+        "fontWeight": "normal",
+        "size": 14
+      }
+    },
+    "legend": {
+      "columns":1,
+      "labelLimit":300
+    }
+  }
 }

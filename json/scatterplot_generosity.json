@@ -2,8 +2,8 @@
   "title": "Happiness Score vs Generosity",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A scatterplot showing body mass and flipper lengths of penguins.",
-  "width":600,
-  "height":600,
+  "width": 570,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -107,23 +107,49 @@
           "filter":"datum.Country == 'Luxembourg'"
         },
         {
-          "calculate": "'Indonesia and Myanmar are generous despite having below average happiness scores'",
+          "calculate": "'Indonesia and Myanmar are lb unhappy but generous'",
           "as": "text_annotation"
         }
       ],
       "mark": {
         "type": "text",
         "fontWeight":"bold",
-        "dx":-30,
-        "dy":-280
+        "dx":150,
+        "dy":-257
       },
       "encoding": {
         "text": {
           "field": "text_annotation"
         },
-        "color":{"value":"#E11584"}
+        "color":{"value":"#f56991"},
+        "size":{"value":15}
       }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter"
+    },
+"autosize":{"type":"pad"},
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  }
+},
+"legend": {
+  "columns":1,
+  "labelLimit":300
+}
+}
 }
