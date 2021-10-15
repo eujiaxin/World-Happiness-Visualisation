@@ -8,12 +8,12 @@
   "layer": [
     {
       "params": [
-        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+        {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
       ],
       "mark": "bar",
       "encoding": {
-        "x": {"field": "Country", "type": "nominal", "sort": "y"},
-        "y": {
+        "y": {"field": "Country", "type": "nominal", "sort": "-x","title":null},
+        "x": {
           "field": "Ladder score",
           "type": "quantitative",
           "title": "Happiness score"
@@ -35,7 +35,7 @@
       "transform": [{"filter": {"param": "brush"}}],
       "mark": "rule",
       "encoding": {
-        "y": {
+        "x": {
           "aggregate": "mean",
           "field": "Ladder score",
           "type": "quantitative"
@@ -63,7 +63,7 @@
         },
         {"filter": "datum['Ladder score'] == datum['max_score'] "}
       ],
-      "mark": {"type": "text", "fontWeight": "lighter", "dx": -210, "dy": -330},
+      "mark": {"type": "text", "fontWeight": "bold", "dx": 470, "dy": -320,"fontSize":22},
       "encoding": {
         "text": {"field": "Average Happiness score", "format": ".2f"},
         "color": {"value": "black"}
@@ -72,13 +72,63 @@
     {
       "transform": [
         {"filter": "datum.Country == 'Afghanistan'"},
-        {"calculate": "'Average Happiness score ='", "as": "text_annotation"}
+        {"calculate": "'Average happiness score of selected range: '", "as": "text_annotation"}
       ],
-      "mark": {"type": "text", "fontWeight": "bold", "dx": -300, "dy": -330},
+      "mark": {"type": "text", "fontWeight": "normal", "dx": 282, "dy": -320,"fontSize":18},
       "encoding": {
         "text": {"field": "text_annotation"},
         "color": {"value": "black"}
       }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Country == 'Afghanistan'"},
+        {"calculate": "'Most unhappy lb countries are lb loacated in lb Sub-Saharan Africa'", "as": "text_annotation"}
+      ],
+      "mark": {"type": "text", "fontWeight": "bold", "dx": 30, "dy": 200,"fontSize":17},
+      "encoding": {
+        "text": {"field": "text_annotation"},
+        "color": {"value": "#964B00"}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Country == 'Afghanistan'"},
+        {"calculate": "'Most happy lb countries are lb located in lb Western Europe'", "as": "text_annotation"}
+      ],
+      "mark": {"type": "text", "fontWeight": "bold", "dx": 350, "dy": 20,"fontSize":17},
+      "encoding": {
+        "text": {"field": "text_annotation"},
+        "color": {"value": "gray"}
+      }
     }
-  ]
+  ],
+  "config": {
+    "axis": {
+      "labelFont": "Source Sans Pro, sans-serif",
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter",
+      "labelFontSize":14,
+      "labelLimit":500
+    },
+    
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  },
+  "legend":{
+    "legendFont": "Source Sans Pro, sans-serif"
+  }
+}
+}
 }

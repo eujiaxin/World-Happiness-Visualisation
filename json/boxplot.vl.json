@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A horizontal box plot showing median, min, and max",
-  "title":"Happiness score based on different regions",
   "data": {
     "url": "https://raw.githubusercontent.com/heheheejin/FIT3179-Data-Visualisation-2-Project/main/data/world-happiness-report-2021.csv"
   },
@@ -11,7 +10,7 @@
 {
    "mark": {"type": "boxplot"},
   "encoding": {
-    "y": {"field": "Regional indicator", "type": "nominal",
+    "y": {"field": "Regional indicator", "type": "nominal","title":"",
     "axis":{
     }},
     "x": {
@@ -23,7 +22,8 @@
     "color": {
       "field": "Regional indicator",
       "type": "nominal",
-      "legend":null
+      "legend":null,
+      "scale":{"scheme":"tableau10"}
     },
     "tooltip":[
       {"field":"Country","type":"nominal"},
@@ -156,7 +156,7 @@
   "mark": {
     "type": "text",
     "fontWeight":"bold",
-    "dx":125,
+    "dx":149,
     "dy":50
   },
   "encoding": {
@@ -165,5 +165,30 @@
     },
     "color":{"value":"black"}
   }}
-  ]
+  ],
+  "config": {
+    "axis": {      "labelFont": "Source Sans Pro, sans-serif",
+
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter",
+      "labelFontSize":14,
+      "labelLimit":500
+    },
+    
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 15
+  }
+}
+}
 }

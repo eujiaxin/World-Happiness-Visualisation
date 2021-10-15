@@ -33,14 +33,13 @@
         "color": {"field": "Regional indicator", "title": "Region"},
                 "opacity": {"condition": {"param": "region", "value": 1}, "value": 0.1},
 
-        "tooltip": [{"field": "Regional indicator", "title": "Region"}]
+        "tooltip": [{"field": "Regional indicator", "title": "Region"},{"field":"Life Ladder","aggregate":"mean","format":".2f","title":"Average Happiness score"}]
       }
     },
     {
       "height": 400,
       "width": "container",
       "mark": "line",
-      "title": "Happiness over the years (2005-2020)",
       "transform": [
         {"filter": "datum['Regional indicator'] != 'NA'"},
         {"filter": "datum.year > 2005"}
@@ -52,7 +51,7 @@
         }
       ],
       "encoding": {
-        "x": {"field": "year", "type": "nominal"},
+        "x": {"field": "year", "type": "nominal","title":null},
         "y": {
           "aggregate": "average",
           "field": "Life Ladder",
@@ -66,5 +65,34 @@
       }
     }
   ],
-  "config": {"title": {"font": "sans-serif", "fontSize": 14}}
+  "config": {
+    "axis": {
+      "labelFont": "Source Sans Pro, sans-serif",
+      "labelAngle":0,
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter",
+      "labelFontSize":14,
+      "labelLimit":500
+    },
+    
+"lineBreak":"lb",
+"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
+"style": {
+  "guide-title": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontSize":15
+  },
+  "text": {
+    "font": "Source Sans Pro, sans-serif",
+    "fontWeight": "normal",
+    "size": 14
+  },
+  "legend":{
+    "legendFont": "Source Sans Pro, sans-serif",
+    "legendLimit":1000
+  }
+}
+}
 }
