@@ -71,3 +71,8 @@ select {
   padding: 2px;
 }
 
+.pop {
+  font-size: xx-large;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255),
+  2px 2px 1px rgb(255, 255, 255); 
+}

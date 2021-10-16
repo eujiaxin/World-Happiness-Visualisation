@@ -37,33 +37,66 @@
       }
     },
     {
-      "height": 400,
-      "width": "container",
-      "mark": "line",
-      "transform": [
-        {"filter": "datum['Regional indicator'] != 'NA'"},
-        {"filter": "datum.year > 2005"}
-      ],
-      "params": [
+      "layer":[
         {
-          "name": "time_brush",
-          "select": {"type": "interval", "encodings": ["x"]}
-        }
-      ],
-      "encoding": {
-        "x": {"field": "year", "type": "nominal","title":null},
-        "y": {
-          "aggregate": "average",
-          "field": "Life Ladder",
-          "title": "Happiness score",
-          "sort": "strokeWidth"
+          "height": 400,
+          "width": "container",
+          "mark": "line",
+          "transform": [
+            {"filter": "datum['Regional indicator'] != 'NA'"},
+            {"filter": "datum.year > 2005"}
+          ],
+          "params": [
+            {
+              "name": "time_brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "encoding": {
+            "x": {"field": "year", "type": "nominal","title":null},
+            "y": {
+              "aggregate": "average",
+              "field": "Life Ladder",
+              "title": "Happiness score",
+              "sort": "strokeWidth"
+            },
+            "color": {"field": "Regional indicator"},
+                    "opacity": {"condition": {"param": "region", "value": 1}, "value": 0.1},
+    
+            "tooltip": [{"field": "Regional indicator", "title": "Region"}]
+          }
         },
-        "color": {"field": "Regional indicator"},
-                "opacity": {"condition": {"param": "region", "value": 1}, "value": 0.1},
-
-        "tooltip": [{"field": "Regional indicator", "title": "Region"}]
-      }
+          {
+            "transform": [
+              
+              {
+                "filter":"datum.Country == 'Japan'"
+              },
+              {
+                "filter":"datum.year == '2020'"
+              },
+              {
+                "calculate": "'Generally, all regions seem to maintain lb at the same happiness level lb for the last 15 years'",
+                "as": "text_annotation"
+              }
+            ],
+            "mark": {
+              "type": "text",
+              "fontWeight":"bold",
+              "dx":0,
+              "dy":60
+            },
+            "encoding": {
+              "text": {
+                "field": "text_annotation"
+              },
+              "color":{"value":"black"},
+              "size":{"value":16}
+            }
+          }
+      ]
     }
+
   ],
   "config": {
     "axis": {
@@ -77,7 +110,7 @@
     },
     
 "lineBreak":"lb",
-"title":{"fontSize":15,"padding":{"left": 5, "top": 5, "right": 5, "bottom": 5}},
+"title":{"fontSize":15},
 "padding":{"left": 5, "top": 5, "right": 5, "bottom": 5},
 "style": {
   "guide-title": {
@@ -88,10 +121,6 @@
     "font": "Source Sans Pro, sans-serif",
     "fontWeight": "normal",
     "size": 14
-  },
-  "legend":{
-    "legendFont": "Source Sans Pro, sans-serif",
-    "legendLimit":1000
   }
 }
 }

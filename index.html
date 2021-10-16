@@ -15,6 +15,10 @@
       crossorigin="anonymous"
     />
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -77,11 +81,13 @@
               In 2011, the United Nations General Assembly (UNGA) was interested
               in measuring happiness of different countries. From 2012 onwards,
               UNGA has been releasing annual reports on global happiness. The
-              report ranks happiness score based on a Cantril ladder survey,
-              where nationally representative samples of respondents are asked
-              to rate their lives from 0 to 10. A decade has passed, and we will
-              explore how happy different countries are now through the
-              following visualisations.
+              report ranks <b>happiness score</b> based on a Cantril ladder
+              survey, where nationally representative samples of respondents are
+              asked to rate their lives from
+              <span class="fw-bold fs-4" style="color: #990000">0</span> to
+              <span class="fw-bold fs-4" style="color: #006400">10</span>. A
+              decade has passed, and we will explore how happy different
+              countries are now through the following visualisations.
             </div>
           </div>
         </div>
@@ -94,11 +100,12 @@
         <div class="row bg1">
           <div class="col-12">
             <div class="span p-4">
-              The following map shows how happy different countires are in 2021.
-              In general, developed countries that are mostly found in Western
-              Europee or North America are the happiest. On the other hand,
-              under-developed countries in South Asia and Sub-Saharan Africa are
-              much sadder.
+              The following map shows how happy different countires are in
+              <b>2021</b>. In general, developed countries that are mostly found
+              in <span class="fw-bold">Western Europe</span> or
+              <span class="fw-bold">North America</span> are the <span class="fw-bold" style="color: #006400;">happiest</span>. On
+              the other hand, under-developed countries in <span class="fw-bold">South Asia</span> and
+              <span class="fw-bold">Sub-Saharan Africa</span> are the <span class="fw-bold" style="color: #990000;">saddest</span>.
             </div>
           </div>
           <div class="col-12 d-flex justify-content-center">
@@ -112,8 +119,7 @@
     <div class="section p-3">
       <div class="container">
         <div class="row bg2 d-flex justify-content-center p-4">
-          Click on the following icons to view the correlation between happiness
-          and 6 other factors
+          <span class="h4 text-center">What <b>factors</b> might possibly be related to happiness? Click on the icons to find out!</span>
         </div>
         <div class="row bg3 p-1">
           <div class="col-2 d-flex justify-content-center">
@@ -174,13 +180,12 @@
 
         <div class="row bg2 p-3 sp" id="gdp_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
-            <span class="py-3">
-              <div class="h3">Rich people are happy!</div>
-              The bubble plot shows a high correlation between happiness and
-              GDP. This shows that richer countries tend to be happier compared
-              to poorer countries. For example, Western Europe is the richest
-              and also happist region. Aside from European countries, East Asian
-              countries such as Taiwan, Japan and South Korea also have very
+            <span class="p-3">
+              <div class="h3 pb-3 fw-bold"><span class="pop">Rich</span> people are happy!</div>
+              The bubble plot shows a <span style="font-style:italic;">high</span> correlation between <b>happiness</b> and
+              <b>GDP</b>. This shows that richer countries tend to be happier compared
+              to poorer countries.<br><br> For example, <span class="fw-bold" style="color:#5d5d5d;">Western Europe</span> is the richest and also happiest region. Aside from European countries, <span class="fw-bold" style="color:firebrick;">East Asian</span>
+              countries such as <span class="fw-bold">Taiwan</span>, <span class="fw-bold">Japan</span> and <span class="fw-bold">South Korea</span> also have very
               good economic production.
             </span>
           </div>
@@ -192,13 +197,13 @@
         <div class="row bg2 p-3 sp" id="corruption_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
             <span class="p-3">
-              <div class="h3">Corruption is everywhere!</div>
-              The bubble plot shows a low correlation between happiness and
-              corruption. No matter how sad or happy a country is, it seems that
-              corruption is a prevalent phenomena globally. However, there is an
-              interesting pattern showing most Western European countries being
-              free from corruption. The biggest surprise would be Rwanda, a very
-              unhappy country who seems to have the least corruption in the
+              <div class="h3 pb-3 fw-bold"><span class="pop">Corruption</span> is everywhere!</div>
+              The bubble plot shows a <span style="font-style:italic;">low</span> correlation between <span class="fw-bold">happiness</span> and
+              <span class="fw-bold">corruption</span>. No matter how sad or happy a country is, it seems that
+              corruption is a prevalent phenomena globally. <br><br>However, there is an
+              interesting pattern showing most <span class="fw-bold" style="color:#5d5d5d;">Western Europe</span> countries being
+              free from corruption. The biggest surprise would be <span class="fw-bold">Rwanda</span>, a very
+              unhappy country who seems to have the <span class="fw-bold">least corruption</span> in the
               world.
             </span>
           </div>
@@ -210,14 +215,14 @@
         <div class="row bg2 p-3 sp" id="freedom_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
             <span class="p-3">
-              <div class="h3">Freedom brings happiness!</div>
-              The bubble plot shows a moderate correlation between happiness and
-              freedom to make life choices. All countries from Southeast Asia
-              seem to have very high level of freedom, Cambodia in particular
-              being the most free country in the world. Afghanistan is not only
-              the unhappiest country, but also the country with least freedom.
-              This may be due to the fact that the extreme military organisation
-              Taliban has taken over the country this year.
+              <div class="h3 pb-3 fw-bold"><span class="pop">Freedom</span> makes us happy!</div>
+              The bubble plot shows a <span style="font-style:italic;">moderate</span> correlation between <span class="fw-bold">happiness</span> and
+              <span class="fw-bold">freedom</span> to make life choices. All countries from <span class="fw-bold" style="color:	#C71585;">Southeast Asia</span> 
+              seem to have very high level of freedom, <span class="fw-bold">Cambodia</span> in particular
+              being the <span class="fw-bold">most free</span> Asian country in the world.<br><br> <p><span class="fw-bold">Afghanistan</span> is not only
+              the <span class="fw-bold">unhappiest</span> country, but also the country with <span class="fw-bold">least freedom</span>.
+              This may be due to the fact that the extreme military organisation 
+              <a href="https://www.nytimes.com/news-event/taliban-afghanistan" class="fw-bold" target="_blank">Taliban</a> has taken over the country this year.</p>
             </span>
           </div>
           <div class="col-sm-12 col-md-8 d-flex justify-content-center">
@@ -228,14 +233,14 @@
         <div class="row bg2 p-3 sp" id="generosity_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
             <span class="p-3">
-              <div class="h3">You don't have to be happy to be generous!</div>
+              <div class="h3 pb-3 fw-bold">You don't have to be happy to be <span class="pop">generous</span>!</div>
 
-              The bubble plot shows a low correlation between happiness and
-              generosity. It seems that most countries are quite stingy
-              regardless of being happy or sad. Interestingly, European
-              countries seem to be less generous than African countries who are
+              The bubble plot shows a <span style="font-style:italic;">low</span> correlation between <span class="fw-bold">happiness</span> and
+              <span class="fw-bold">generosity</span>. It seems that most countries are quite stingy
+              regardless of being happy or sad. <br><br> Interestingly, <span class="fw-bold" style="color:#4169E1;">Central and Eastern European</span>
+              countries seem to be <b>less generous</b> than <span class="fw-bold" style="color:	#800000;">African</span> countries who are
               less happier than them. On the other hand, countries with below
-              average happiness such as Indonesia and Myanmar are the most
+              average happiness such as <b>Indonesia</b> and <b>Myanmar</b> are the most
               generous in the world.
             </span>
           </div>
@@ -247,11 +252,11 @@
         <div class="row bg2 p-3 sp" id="life_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
             <span class="p-3">
-              <div class="h3">Happy people live longer!</div>
-              The bubble plot shows a high correlation between happiness and
-              healthy life expectancy. All Sub-Saharan African countries have
-              relatively short healthy life expectancy and low happiness score.
-              The only exception is Mauritius which is by far the happiest
+              <div class="h3 pb-3 fw-bold">Happy people <span class="pop">live</span> longer!</div>
+              The bubble plot shows a <span style="font-style:italic;">high</span> correlation between <span class="fw-bold">happiness</span> and
+              <span class="fw-bold">healthy life expectancy</span>. <br><br>All <span class="fw-bold" style="color:	#800000;">Sub-Saharan African</span> countries have
+              relatively <b>short healthy life expectancy</b> and low happiness score.
+              The only exception is <span class="fw-bold">Mauritius</span> which is by far the happiest
               country from the region with a long healthy life expectancy.
             </span>
           </div>
@@ -263,11 +268,11 @@
         <div class="row bg2 p-3 sp" id="social_sp">
           <div class="col-sm-12 col-md-4 d-flex justify-content-center">
             <span class="p-3">
-              <div class="h3">Social support makes people happy!</div>
-              The bubble plot shows a high correlation between happiness and
-              social support. Most Sub-Saharan African countires lack proper
-              social support with the exception of Mauritius, being on par with
-              European countries. This is thanks to social assistance schemes
+              <div class="h3 pb-3 fw-bold"><span class="pop">Social support</span> makes people happy!</div>
+              The bubble plot shows a <span style="font-style:italic;">high</span> correlation between <span class="fw-bold">happiness</span> and
+              <span class="fw-bold">social support</span>. <br><br> Most <span class="fw-bold" style="color:	#800000;">Sub-Saharan African</span> countries lack proper
+              social support with the exception of <span class="fw-bold">Mauritius</span>, being on par with
+              European countries. This is thanks to <a href="https://theconversation.com/mauritius-heads-into-coronavirus-storm-with-strong-social-welfare-buffers-135702" class="fw-bold" target="_blank">social assistance schemes</a>
               such as universal and free health coverage, free education and
               various other incentives provided by the country.
             </span>
@@ -284,13 +289,13 @@
       <div class="container">
         <div class="row bg1">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Regional Happiness</div>
+            <div class="h1 fw-bold">Happiness in Different Regions</div>
           </div>
           <div class="col-12 m-3">
             The following box plot displays the distribution of happiness among
-            different regions. At first glance, we see that South Asian
-            countries are the unhappiest while Western European countries are
-            the happiest. Meanwhile, outliers such as Haiti and Venezuela are
+            different regions. At first glance, we see that <span class="fw-bold" style="color:purple;">South Asian</span>
+            countries are the unhappiest while <span class="fw-bold" style="color:#5d5d5d;">Western European</span> countries are
+            the happiest. Meanwhile, outliers such as <b>Haiti</b> and <b>Venezuela</b> are
             significantly more unhappy compared to other countries in the same
             region.
           </div>
@@ -306,12 +311,12 @@
       <div class="container">
         <div class="row bg2">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Top 10 Happiest and Saddest Countries</div>
+            <div class="h1 fw-bold">Top 10 Happiest and Saddest Countries</div>
           </div>
           <div class="col-12 m-3">
-            New Zealand is the only top 10 happiest country that is not from
-            Western Europe. On the other hand, the unhappiest country is
-            Afghanistan, which is also the only South Asian country that is
+            <b>New Zealand</b> is the only top 10 happiest country that is not from
+            <span class="fw-bold" style="color:#5d5d5d;">Western Europe</span>. On the other hand, the unhappiest country is
+            <b>Afghanistan</b>, which is also the only <span class="fw-bold" style="color:purple;">South Asian</span> country that is
             ranked within top 10 unhappiest country in the world.
           </div>
           <div class="col-12 d-flex justify-content-center">
@@ -326,15 +331,17 @@
       <div class="container">
         <div class="row bg1">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Breaking down Happiest and Saddest Countries</div>
+            <div class="h1 fw-bold">Breaking down Happiest and Saddest Countries</div>
           </div>
           <div class="col-12 mx-3 mt-3">
             <span>
               A representative country from each region has been selected based
               on the bar chart above. We see that happy countries such as
-              Finland and New Zealand have low corruption and excellent social
-              support, while other countries suffer from corruption and low
+              <b>Finland</b> and <b>New Zealand</b> have low corruption and excellent social
+              support, while other unfortunate countries suffer from corruption and low
               quality of life.
+              <br><br>
+              <span style="color:#6a6a6a;">Use the interactive buttons and legends to filter out countries and compare their factors.</span> 
             </span>
           </div>
           <div class="col-12 p-3">
@@ -356,30 +363,30 @@
       <div class="container">
         <div class="row bg2">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Always Happy? Always Sad?</div>
+            <div class="h1 fw-bold">Always <span style="color:#006400;">Happy</span>? Always <span style="color: #990000;">Sad</span>?</div>
           </div>
-          <div class="col-12 m-3">
-            <span class="p-3">
-              <p>
-                So far, we have only seen happiness data from 2021. Let us
-                explore how different countries experienced happiness from the
-                last 15 years. We see that happy countries usually stay happy,
-                whereas most unhappy countries fluctuate but never manage to
-                surpass the average happiness level.
-              </p>
-              <p>
-                From the line chart, Jordan experienced the harshest drop in
-                happiness while Latvia is the only country that managed to
-                become significantly happier.
-              </p>
+          <div class="col-12 px-3 mx-3 mt-3">
+            <span>
+              So far, we have only seen happiness data from <b>2021</b>. Let us
+              explore how different countries experienced happiness from the
+              last 15 years. We see that <span class="fw-bold">happy countries usually stay happy</span>,
+              whereas most <b>unhappy countries fluctuate but never manage to
+              surpass the average happiness level.</b>
+              From the line chart, <span class="fw-bold" style="color:firebrick;">Jordan</span> experienced the <span class="fw-bold" style="color:firebrick;">harshest drop</span> in
+              happiness while <span class="fw-bold" style="color:green;">Latvia</span> and <span class="fw-bold" style="color:green;">Bulgaria</span> are the only countries that managed to
+              become <span class="fw-bold" style="color:green;">significantly happier</span>. 
+
+              <br><br><span style="color:#6a6a6a;">Use the interactive buttons to view the countries either by scores through a <b>line chart</b>, or by rank through a <b>bump chart</b>. Hover over the lines to filter and select countries.</span>
             </span>
           </div>
-          <div class="col-12">
-            <div
-              class="flourish-embed flourish-chart p-3"
+          <div class="col-12 p-3">
+            <div class="p-3">
+              <div
+              class="flourish-embed flourish-chart"
               data-src="visualisation/7417397"
             >
               <script src="https://public.flourish.studio/resources/embed.js"></script>
+              </div>
             </div>
           </div>
         </div>
@@ -391,20 +398,19 @@
       <div class="container">
         <div class="row bg1">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Overall Happiness Throughout the Years</div>
+            <div class="h1 fw-bold">Overall Happiness Throughout the Years</div>
           </div>
-          <div class="col-12 m-3">
+          <div class="col-12 mx-3 mt-3">
             <span class="">
               <p>
-                The following interactive line chart allows brushing to view the
-                average happiness between different regions based on a selected
-                timeframe. The average happiness will be reflected on the bar
-                chart.
-              </p>
-              <p>
                 From a bigger picture, it seems that the happiness levels is
-                very consistent. No matter what timeframe is selected, the
-                average happiness does not seem to vary too much.
+                very <b>consistent</b>. No matter what timeframe is selected, the
+                average happiness does not seem to vary too much for each region. Although countries ranking seem to shift quite a bit, the general top 20 <span class="fw-bold" style="color:#006400;">happiest</span> countries remains more or less the same throughout the years.
+              </p>
+              <p style="color: #5d5d5d;">
+                The following interactive <b>line chart</b> allows brushing to view the
+                average happiness between different regions and countries based on a selected
+                timeframe. The average happiness will be reflected on both <b>bar charts</b>.
               </p>
             </span>
           </div>
@@ -420,18 +426,35 @@
       <div class="container">
         <div class="row bg2">
           <div class="col-12 mt-3 mx-3">
-            <div class="h1">Conclusion</div>
+            <div class="h1 fw-bold">Conclusion</div>
           </div>
-          <div class="col-12 m-3">
-            <span class="pr-3 pb-3">
+          <div class="col-12 m-3 px-3 pb-4">
+            <span class="pr-3 pb-5">
               Overall, we see that global happiness is fairly consistent
-              throughout the years where unhappy countries generally stay
-              unhappy. Hopefully, everyone can be happy one day!
+              throughout the years where well-developed countries stay happy. On the other hand, it is quite disheartening to see how under-developed countries struggle to be happy. Hopefully, everyone can be happy one day!
             </span>
+          </div>
+          <div class="col-12 pb-4 text-center">
+            <img
+            src="resource/world.svg"
+            alt="World Happy SVG"
+            class="pt-3"
+            width="200px"
+            height="200px"
+          />
           </div>
         </div>
       </div>
     </div>
+
+      
+    <!-- Footer -->
+    <footer class="text-center position-relative">
+        <p class="lead pt-5">Copyright &copy; 2021 Eu Jia Xin</p>
+        <a href="#" class="position-absolute bottom-0 end-0">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+    </footer>
 
     <!-- Change slelect -->
     <script type="text/javascript">
@@ -508,7 +531,7 @@
         })
         .catch(console.error);
 
-      var vis5 = "json/multiview_bar_line.vl.json";
+      var vis5 = "json/multiview-three.json";
       vegaEmbed("#vis5", vis5)
         .then(function (result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
