@@ -7,7 +7,7 @@
     {
       "vconcat": [
         {
-          "height": 400,
+          "height": 350,
           "width": 800,
           "mark": "bar",
           "params": [
@@ -82,7 +82,7 @@
           }
         },
         {
-          "height": 400,
+          "height": 300,
           "width": 800,
           "mark": "line",
           "transform": [
@@ -107,7 +107,8 @@
           "encoding": {
             "x": {
               "field": "year",
-              "type": "nominal"
+              "type": "nominal",
+              "title":"Year"
             },
             "y": {
               "aggregate": "mean",
@@ -146,7 +147,7 @@
     },
     {
       "width": 400,
-      "height": 835,
+      "height": 685,
       "title": "Top 20 happiest countries",
       "transform": [
         {
