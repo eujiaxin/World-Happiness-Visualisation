@@ -12,6 +12,8 @@
   "encoding": {
     "y": {"field": "Regional indicator", "type": "nominal","title":"",
     "axis":{
+      "labelFont": "Source Sans Pro, sans-serif"
+
     }},
     "x": {
       "field": "Ladder score",
